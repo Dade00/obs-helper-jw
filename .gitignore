@@ -21,3 +21,8 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Eccezione per il release del daemon C# (include exe e dll necessari per il deploy)
+!release/
+!release/**/*.exe
+!release/**/*.dll

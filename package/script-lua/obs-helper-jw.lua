@@ -294,17 +294,19 @@ function script_description()
     return "OBS Helper JW — Switcha automaticamente sulla scena multimediale quando JW Library presenta video su uscita secondaria. Torna alla scena precedente al termine."
 end
 
-function script_load(settings)
-    settings.enabled = obs.obs_data_get_bool(settings, "enabled") or false
-    settings.helper_path = obs.obs_data_get_string(settings, "helper_path") or ""
-    settings.media_scene = obs.obs_data_get_string(settings, "media_scene") or ""
-    settings.include_images = obs.obs_data_get_bool(settings, "include_images") or false
+function script_load(settings_ud)
+    -- Legge impostazioni da settings_ud (userdata OBS obs_data_t)
+    settings.enabled = obs.obs_data_get_bool(settings_ud, "enabled") or false
+    settings.helper_path = obs.obs_data_get_string(settings_ud, "helper_path") or ""
+    settings.media_scene = obs.obs_data_get_string(settings_ud, "media_scene") or ""
+    settings.include_images = obs.obs_data_get_bool(settings_ud, "include_images") or false
 
     -- Riconoscimento automatico helper accanto allo script (solo se non già impostato)
     if settings.helper_path == "" then
         local auto_path = find_helper_path()
         if auto_path ~= "" then
             settings.helper_path = auto_path
+            obs.obs_data_set_string(settings_ud, "helper_path", auto_path)
         end
     end
 

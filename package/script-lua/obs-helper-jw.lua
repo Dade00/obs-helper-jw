@@ -366,13 +366,6 @@ function script_load(settings_ud)
     last_reason = "caricato"
 
     -- Avvia timer periodico per evaluate (ogni 500ms)
-    -- Lancia helper UNA SOLA VOLTA in background (start /b = nessuna finestra visibile)
-    if settings.helper_path ~= "" then
-        local launch_cmd = string.format('start "" /b "%s" --monitor', settings.helper_path)
-        os.execute(launch_cmd)
-        obs.blog(obs.LOG_INFO, "[OBS Helper JW] helper lanciato in background: " .. settings.helper_path)
-    end
-
     -- Avvia timer periodico per evaluate (ogni 500ms)
     obs.timer_add(evaluate, tick_interval_ms)
 end

@@ -22,17 +22,41 @@ local expected_scene = ""
 -- ================================================================
 
 local function find_helper_path()
-    local script_path = debug.getinfo(1, "S").source:sub(2)
-    local dir = script_path:match("^(.*)\\[^\\]*$") or script_path:match("^(.*)/[^/]*$") or ""
+    local info = debug.getinfo(1, "S")
+    local script_path = info.source
+    if script_path:sub(1,1) == "@" then
+        script_path = script_path:sub(2)
+    end
+    obs.blog(obs.LOG_INFO, "[OBS Helper JW] script_path=" .. script_path)
+
+    -- Estrai directory (gestisci sia / che \)
+    local dir = script_path:match("^(.*)[/\\][^/\\]*$") or ""
     if dir == "" then
+        obs.blog(obs.LOG_ERROR, "[OBS Helper JW] impossibile estrarre directory da script_path")
         return ""
     end
-    local candidate = dir .. "\\helper\\WinRtMediaProbe.exe"
+    obs.blog(obs.LOG_INFO, "[OBS Helper JW] dir=" .. dir)
+
+    -- Prova con slash forward
+    local candidate = dir .. "/helper/WinRtMediaProbe.exe"
+    obs.blog(obs.LOG_INFO, "[OBS Helper JW] candidate=" .. candidate)
     local f = io.open(candidate, "r")
     if f then
         f:close()
+        obs.blog(obs.LOG_INFO, "[OBS Helper JW] helper trovato: " .. candidate)
         return candidate
     end
+
+    -- Prova anche con backslash
+    local candidate2 = dir .. "\\helper\\WinRtMediaProbe.exe"
+    local f2 = io.open(candidate2, "r")
+    if f2 then
+        f2:close()
+        obs.blog(obs.LOG_INFO, "[OBS Helper JW] helper trovato (backslash): " .. candidate2)
+        return candidate2
+    end
+
+    obs.blog(obs.LOG_ERROR, "[OBS Helper JW] helper NON trovato in: " .. candidate .. " o " .. candidate2)
     return ""
 end
 
@@ -42,8 +66,11 @@ end
 
 local function read_jw_state()
     if settings.helper_path == nil or settings.helper_path == "" then
+        obs.blog(obs.LOG_ERROR, "[OBS Helper JW] helper_path non configurato")
         return nil, "helper_path non configurato"
     end
+
+    obs.blog(obs.LOG_INFO, "[OBS Helper JW] eseguo helper: " .. settings.helper_path)
 
     local output_file = os.getenv("TEMP") .. "\\obs_helper_jw_state.json"
     local cmd = string.format('"%s" --output "%s" 2>nul', settings.helper_path, output_file)
@@ -51,10 +78,13 @@ local function read_jw_state()
 
     local f = io.open(output_file, "r")
     if not f then
+        obs.blog(obs.LOG_ERROR, "[OBS Helper JW] helper non ha prodotto output file: " .. output_file)
         return nil, "helper non ha prodotto output"
     end
     local output = f:read("*a")
     f:close()
+
+    obs.blog(obs.LOG_INFO, "[OBS Helper JW] output helper: " .. tostring(output))
 
     if output == nil or output == "" then
         return nil, "helper ha restituito output vuoto"
@@ -65,6 +95,7 @@ local function read_jw_state()
     end)
 
     if not ok then
+        obs.blog(obs.LOG_ERROR, "[OBS Helper JW] errore parsing JSON: " .. tostring(result))
         return nil, "errore parsing JSON helper: " .. tostring(result)
     end
 
@@ -127,6 +158,7 @@ local function set_scene(name)
     if scene == nil then return false end
     obs.obs_frontend_set_current_scene(scene)
     obs.obs_source_release(scene)
+    obs.blog(obs.LOG_INFO, "[OBS Helper JW] switchato scena: " .. name)
     return true
 end
 
@@ -157,14 +189,21 @@ local function evaluate()
     if err then
         state = "SIGNAL_LOST"
         last_reason = err
+        obs.blog(obs.LOG_WARN, "[OBS Helper JW] " .. err)
         return
     end
 
     if result == nil then
         state = "SIGNAL_LOST"
         last_reason = "nessuna risposta dall'helper"
+        obs.blog(obs.LOG_WARN, "[OBS Helper JW] nessuna risposta dall'helper")
         return
     end
+
+    obs.blog(obs.LOG_INFO, "[OBS Helper JW] stato helper: playing=" .. tostring(result.jw_is_playing) ..
+        " paused=" .. tostring(result.jw_is_paused) ..
+        " active=" .. tostring(result.has_active_jw) ..
+        " available=" .. tostring(result.available))
 
     local jw_playing = result.jw_is_playing == true
     local jw_paused = result.jw_is_paused == true
@@ -179,6 +218,7 @@ local function evaluate()
     if state == "MEDIA_ACTIVE" and check_manual_change() then
         state = "MANUAL_OVERRIDE"
         last_reason = "cambio manuale: utente prevale"
+        obs.blog(obs.LOG_INFO, "[OBS Helper JW] cambio manuale rilevato")
         return
     end
 
@@ -189,6 +229,7 @@ local function evaluate()
             cycle_armed = false
             saved_scene = ""
             last_reason = "fine contenuto: riarmo dopo override manuale"
+            obs.blog(obs.LOG_INFO, "[OBS Helper JW] riarmo dopo override manuale")
         else
             last_reason = "override manuale attivo: nessun cambio"
         end
@@ -201,6 +242,7 @@ local function evaluate()
             state = "IDLE"
             cycle_armed = false
             last_reason = "segnale ripristinato"
+            obs.blog(obs.LOG_INFO, "[OBS Helper JW] segnale ripristinato")
         else
             last_reason = "segnale ancora perso: nessun cambio cieco"
         end
@@ -219,13 +261,15 @@ local function evaluate()
             cycle_armed = true
             state = "MEDIA_ACTIVE"
             last_reason = "ingresso media su uscita selezionata"
+            obs.blog(obs.LOG_INFO, "[OBS Helper JW] media attivo, salvo scena: " .. saved_scene)
 
             if settings.media_scene ~= "" and scene_exists(settings.media_scene) then
                 set_scene(settings.media_scene)
                 expected_scene = settings.media_scene
                 last_reason = last_reason .. " → scena: " .. settings.media_scene
             else
-                last_reason = last_reason .. " (scena destinazione non trovata)"
+                last_reason = last_reason .. " (scena destinazione non trovata: " .. tostring(settings.media_scene) .. ")"
+                obs.blog(obs.LOG_ERROR, "[OBS Helper JW] scena destinazione non trovata: " .. tostring(settings.media_scene))
             end
         else
             last_reason = "standby / nessun media attivo"
@@ -242,8 +286,10 @@ local function evaluate()
                 set_scene(saved_scene)
                 expected_scene = saved_scene
                 last_reason = "uscita media: ritorno a " .. saved_scene
+                obs.blog(obs.LOG_INFO, "[OBS Helper JW] ritorno a scena: " .. saved_scene)
             else
                 last_reason = "uscita media: scena salvata non trovata"
+                obs.blog(obs.LOG_ERROR, "[OBS Helper JW] scena salvata non trovata: " .. tostring(saved_scene))
             end
             saved_scene = ""
         else

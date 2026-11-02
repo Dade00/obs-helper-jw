@@ -1,5 +1,6 @@
 // obs_helper_jw.cpp — entry point plugin OBS (C API)
 // Non contiene riferimenti al PC di sviluppo.
+// Impostazioni tramite tab interna OBS (obs_module_properties).
 #include "obs_helper_jw.h"
 #include "detector/detector_impl.h"
 #include "state_machine/state_machine.h"
@@ -12,7 +13,6 @@
 #include <string>
 #include <windows.h>
 #include <shlobj.h>
-#include <fstream>
 
 // Chiavi impostazioni (definizione)
 const char *kSettingEnabled = "enabled";
@@ -20,54 +20,6 @@ const char *kSettingHelperPath = "helper_path";
 const char *kSettingMediaScene = "media_scene";
 const char *kSettingOutputId = "output_id";
 const char *kSettingIncludeImages = "include_images";
-
-// Legge config.json accanto al plugin DLL
-static void load_config_file(ObsHelperJwPlugin &plugin)
-{
-    wchar_t module_path[MAX_PATH] = {0};
-    GetModuleFileNameW(nullptr, module_path, MAX_PATH);
-    std::wstring dir = module_path;
-    size_t pos = dir.find_last_of(L"\\/");
-    if (pos != std::wstring::npos)
-        dir = dir.substr(0, pos + 1);
-    std::string config_path(dir.begin(), dir.end());
-    config_path += "config.json";
-
-    std::ifstream file(config_path);
-    if (!file.is_open())
-        return;
-
-    std::string content((std::istreambuf_iterator<char>(file)),
-                        std::istreambuf_iterator<char>());
-
-    // Parsing JSON minimo per i campi che ci servono
-    auto find_bool = [&](const std::string &key) -> bool {
-        std::string search = "\"" + key + "\":";
-        size_t p = content.find(search);
-        if (p == std::string::npos) return false;
-        p += search.size();
-        while (p < content.size() && (content[p] == ' ' || content[p] == '\t')) p++;
-        return content.compare(p, 4, "true") == 0;
-    };
-
-    auto find_string = [&](const std::string &key) -> std::string {
-        std::string search = "\"" + key + "\":";
-        size_t p = content.find(search);
-        if (p == std::string::npos) return "";
-        p += search.size();
-        while (p < content.size() && (content[p] == ' ' || content[p] == '\t')) p++;
-        if (p >= content.size() || content[p] != '"') return "";
-        p++;
-        size_t end = content.find('"', p);
-        if (end == std::string::npos) return "";
-        return content.substr(p, end - p);
-    };
-
-    plugin.config_.enabled = find_bool(kSettingEnabled);
-    plugin.config_.helper_path = find_string(kSettingHelperPath);
-    plugin.config_.media_scene = find_string(kSettingMediaScene);
-    plugin.config_.include_images = find_bool(kSettingIncludeImages);
-}
 
 OBS_MODULE_AUTHOR("OBS Helper JW")
 
@@ -107,14 +59,9 @@ bool obs_module_load(obs_module_t *module)
     g_plugin->config_.include_images = false;
     g_plugin->config_.last_reason = "caricato";
 
-    // Carica config.json se presente (permette configurazione senza ricompilare)
-    load_config_file(*g_plugin);
-
-    // Rilevamento automatico helper accanto al plugin (solo se non in config.json)
-    if (g_plugin->config_.helper_path.empty()) {
-        std::wstring helper_path_w = find_helper_path();
-        g_plugin->config_.helper_path = std::string(helper_path_w.begin(), helper_path_w.end());
-    }
+    // Rilevamento automatico helper accanto al plugin
+    std::wstring helper_path_w = find_helper_path();
+    g_plugin->config_.helper_path = std::string(helper_path_w.begin(), helper_path_w.end());
 
     // Inizializza componenti
     g_plugin->detector_ = std::make_unique<JwDetector>();
@@ -139,7 +86,36 @@ void obs_module_unload(void)
 }
 
 // ————————————————————————————————————————————————————————————————
-// Tick chiamato periodicamente (da script Lua wrapper o timer)
+// Impostazioni predefinite
+// ————————————————————————————————————————————————————————————————
+void obs_module_set_defaults(obs_data_t *settings)
+{
+    obs_data_set_default_bool(settings, kSettingEnabled, false);
+    obs_data_set_default_string(settings, kSettingHelperPath, "");
+    obs_data_set_default_string(settings, kSettingMediaScene, "");
+    obs_data_set_default_bool(settings, kSettingIncludeImages, false);
+}
+
+// ————————————————————————————————————————————————————————————————
+// Pannello impostazioni OBS (tab interna)
+// ————————————————————————————————————————————————————————————————
+obs_properties_t *obs_module_properties(obs_module_t *module, obs_properties_t *props)
+{
+    (void)module;
+
+    obs_properties_add_bool(props, kSettingEnabled, "Abilita automazione scena JW Library");
+
+    obs_properties_add_text(props, kSettingHelperPath, "Percorso eseguibile WinRtMediaProbe.exe", OBS_TEXT_DEFAULT);
+
+    obs_properties_add_text(props, kSettingMediaScene, "Scena multimediale di destinazione", OBS_TEXT_DEFAULT);
+
+    obs_properties_add_bool(props, kSettingIncludeImages, "Includi immagini (default spento)");
+
+    return props;
+}
+
+// ————————————————————————————————————————————————————————————————
+// Tick chiamato periodicamente (da chiamare da uno script Lua wrapper)
 // ————————————————————————————————————————————————————————————————
 void obs_helper_jw_tick(void)
 {

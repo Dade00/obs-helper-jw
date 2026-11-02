@@ -1,7 +1,5 @@
 {
   "url": "ws://localhost:4455",
   "password": "",
-  "media_scene": "",
-  "enabled": true,
-  "include_images": false
+  "media_scene": "Scena 2"
 }

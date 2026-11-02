@@ -1,0 +1,261 @@
+{
+  "media_sessions": {
+    "sessions_enumerated": false,
+    "error": "Tipo WinRT GlobalSystemMediaTransportControlsSessionManager non risolto",
+    "available": false,
+    "other_sessions_count": 0,
+    "jw_sessions": [],
+    "manager_obtained": false
+  },
+  "ui_automation": {
+    "jw_elements": [],
+    "root_element_found": false,
+    "error": "Non è possibile trovare il tipo ''UIAutomation.AutomationElement''.",
+    "available": true
+  },
+  "conclusion": "WinRT media session manager non disponibile: impossibile valutare segnale media",
+  "os_version": "Microsoft Windows 11 Home 10.0.26300 Build 26300",
+  "monitors": [
+    {
+      "primary": true,
+      "device_name": "\\\\.\\DISPLAY1",
+      "bounds_left": 0,
+      "working_top": 0,
+      "width": 1707,
+      "bounds_right": 1707,
+      "bounds_top": 0,
+      "bounds_bottom": 1067,
+      "working_left": 0,
+      "height": 1067
+    },
+    {
+      "primary": false,
+      "device_name": "\\\\.\\DISPLAY5",
+      "bounds_left": -2560,
+      "working_top": 76,
+      "width": 2560,
+      "bounds_right": 0,
+      "bounds_top": 76,
+      "bounds_bottom": 1516,
+      "working_left": -2560,
+      "height": 1440
+    }
+  ],
+  "jw_windows": [
+    {
+      "hwnd": 5312900,
+      "top": 33,
+      "title": "JW Library",
+      "children": [
+        {
+          "right": 0,
+          "title": "CoreInput",
+          "pid": 12268,
+          "bottom": 33,
+          "classname": "Windows.UI.Core.CoreComponentInputSource",
+          "hwnd": 11931616,
+          "left": 0,
+          "top": 33
+        },
+        {
+          "right": 0,
+          "title": "CoreInput",
+          "pid": 12268,
+          "bottom": 33,
+          "classname": "Windows.UI.Core.CoreComponentInputSource",
+          "hwnd": 16583286,
+          "left": 0,
+          "top": 33
+        }
+      ],
+      "right": 1200,
+      "pid": 12268,
+      "left": 0,
+      "classname": "Windows.UI.Core.CoreWindow",
+      "bottom": 933
+    },
+    {
+      "hwnd": 38146050,
+      "top": 0,
+      "title": "MSCTFIME UI",
+      "children": [],
+      "right": 0,
+      "pid": 12268,
+      "left": 0,
+      "classname": "MSCTFIME UI",
+      "bottom": 0
+    },
+    {
+      "hwnd": 4460438,
+      "top": 0,
+      "title": "Default IME",
+      "children": [],
+      "right": 0,
+      "pid": 12268,
+      "left": 0,
+      "classname": "IME",
+      "bottom": 0
+    }
+  ],
+  "jw_webview_wrappers": [],
+  "obs_version": null,
+  "obs_running": false,
+  "jw_processes": [
+    {
+      "mainwindowhandle": "5312900",
+      "mainwindowtitle": "JW Library",
+      "pid": 12268,
+      "name": "JWLibrary",
+      "version": null,
+      "path": "C:\\Program Files\\WindowsApps\\WatchtowerBibleandTractSo.45909CDBADF3C_15.9.54.0_x64__5rz59y55nfz3e\\JWLibrary.exe",
+      "child_processes": [
+        {
+          "mainwindowtitle": "",
+          "name": "msedgewebview2",
+          "pid": 1944
+        },
+        {
+          "mainwindowtitle": "",
+          "name": "msedgewebview2",
+          "pid": 7056
+        },
+        {
+          "mainwindowtitle": "",
+          "name": "msedgewebview2",
+          "pid": 7376
+        },
+        {
+          "mainwindowtitle": "",
+          "name": "msedgewebview2",
+          "pid": 10884
+        },
+        {
+          "mainwindowtitle": "",
+          "name": "msedgewebview2",
+          "pid": 11928
+        },
+        {
+          "mainwindowtitle": "",
+          "name": "msedgewebview2",
+          "pid": 15536
+        },
+        {
+          "mainwindowtitle": "",
+          "name": "msedgewebview2",
+          "pid": 16608
+        },
+        {
+          "mainwindowtitle": "",
+          "name": "msedgewebview2",
+          "pid": 17224
+        },
+        {
+          "mainwindowtitle": "",
+          "name": "msedgewebview2",
+          "pid": 17304
+        },
+        {
+          "mainwindowtitle": "",
+          "name": "msedgewebview2",
+          "pid": 17780
+        },
+        {
+          "mainwindowtitle": "",
+          "name": "msedgewebview2",
+          "pid": 18056
+        },
+        {
+          "mainwindowtitle": "",
+          "name": "msedgewebview2",
+          "pid": 18096
+        },
+        {
+          "mainwindowtitle": "",
+          "name": "msedgewebview2",
+          "pid": 18408
+        },
+        {
+          "mainwindowtitle": "",
+          "name": "msedgewebview2",
+          "pid": 21112
+        },
+        {
+          "mainwindowtitle": "",
+          "name": "msedgewebview2",
+          "pid": 23632
+        },
+        {
+          "mainwindowtitle": "",
+          "name": "msedgewebview2",
+          "pid": 24288
+        },
+        {
+          "mainwindowtitle": "",
+          "name": "msedgewebview2",
+          "pid": 24312
+        },
+        {
+          "mainwindowtitle": "",
+          "name": "msedgewebview2",
+          "pid": 24496
+        },
+        {
+          "mainwindowtitle": "",
+          "name": "msedgewebview2",
+          "pid": 24512
+        },
+        {
+          "mainwindowtitle": "",
+          "name": "msedgewebview2",
+          "pid": 24672
+        },
+        {
+          "mainwindowtitle": "",
+          "name": "msedgewebview2",
+          "pid": 24680
+        },
+        {
+          "mainwindowtitle": "",
+          "name": "msedgewebview2",
+          "pid": 26456
+        },
+        {
+          "mainwindowtitle": "",
+          "name": "msedgewebview2",
+          "pid": 26480
+        },
+        {
+          "mainwindowtitle": "",
+          "name": "msedgewebview2",
+          "pid": 26988
+        },
+        {
+          "mainwindowtitle": "",
+          "name": "msedgewebview2",
+          "pid": 31376
+        },
+        {
+          "mainwindowtitle": "",
+          "name": "msedgewebview2",
+          "pid": 32892
+        },
+        {
+          "mainwindowtitle": "",
+          "name": "msedgewebview2",
+          "pid": 33348
+        },
+        {
+          "mainwindowtitle": "",
+          "name": "msedgewebview2",
+          "pid": 34120
+        },
+        {
+          "mainwindowtitle": "",
+          "name": "msedgewebview2",
+          "pid": 35972
+        }
+      ]
+    }
+  ],
+  "timestamp": "2026-11-01T15:40:51+01:00"
+}

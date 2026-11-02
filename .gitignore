@@ -1,0 +1,23 @@
+# Build artifacts
+build/
+*.obj
+*.exe
+*.dll
+*.lib
+*.exp
+*.idb
+*.pdb
+*.slnx
+*.vcxproj
+*.vcxproj.filters
+*.dir/
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

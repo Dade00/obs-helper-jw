@@ -1,0 +1,297 @@
+﻿{
+    "ui_automation":  {
+                          "error":  "Impossibile trovare il tipo [UIAutomation.AutomationElement].",
+                          "jw_elements":  [
+
+                                          ],
+                          "root_element_found":  false,
+                          "available":  true
+                      },
+    "os_version":  "Microsoft Windows 11 Home 10.0.26300 Build 26300",
+    "obs_version":  null,
+    "conclusion":  "WinRT media session manager non disponibile: impossibile valutare segnale media",
+    "media_sessions":  {
+                           "sessions_enumerated":  false,
+                           "manager_obtained":  false,
+                           "other_sessions_count":  0,
+                           "available":  false,
+                           "error":  "Chiamata al metodo non riuscita. [System.__ComObject] non contiene un metodo denominato \u0027GetAwaiter\u0027.",
+                           "jw_sessions":  [
+
+                                           ]
+                       },
+    "jw_webview_wrappers":  [
+
+                            ],
+    "timestamp":  "2026-11-01T16:01:28+01:00",
+    "jw_windows":  [
+                       {
+                           "classname":  "Windows.UI.Core.CoreWindow",
+                           "left":  0,
+                           "title":  "JW Library",
+                           "bottom":  933,
+                           "children":  [
+                                            {
+                                                "pid":  12268,
+                                                "hwnd":  11931616,
+                                                "bottom":  33,
+                                                "title":  "CoreInput",
+                                                "classname":  "Windows.UI.Core.CoreComponentInputSource",
+                                                "top":  33,
+                                                "left":  0,
+                                                "right":  0
+                                            },
+                                            {
+                                                "pid":  12268,
+                                                "hwnd":  16583286,
+                                                "bottom":  33,
+                                                "title":  "CoreInput",
+                                                "classname":  "Windows.UI.Core.CoreComponentInputSource",
+                                                "top":  33,
+                                                "left":  0,
+                                                "right":  0
+                                            }
+                                        ],
+                           "right":  1200,
+                           "pid":  12268,
+                           "hwnd":  5312900,
+                           "top":  33
+                       },
+                       {
+                           "classname":  "Xaml_WindowedPopupClass",
+                           "left":  1197,
+                           "title":  "Host popup",
+                           "bottom":  1000,
+                           "children":  [
+
+                                        ],
+                           "right":  1344,
+                           "pid":  12268,
+                           "hwnd":  4984992,
+                           "top":  879
+                       },
+                       {
+                           "classname":  "Xaml_WindowedPopupClass",
+                           "left":  1318,
+                           "title":  "Host popup",
+                           "bottom":  934,
+                           "children":  [
+
+                                        ],
+                           "right":  1676,
+                           "pid":  12268,
+                           "hwnd":  4198832,
+                           "top":  719
+                       },
+                       {
+                           "classname":  "MSCTFIME UI",
+                           "left":  0,
+                           "title":  "MSCTFIME UI",
+                           "bottom":  0,
+                           "children":  [
+
+                                        ],
+                           "right":  0,
+                           "pid":  12268,
+                           "hwnd":  38146050,
+                           "top":  0
+                       },
+                       {
+                           "classname":  "IME",
+                           "left":  0,
+                           "title":  "Default IME",
+                           "bottom":  0,
+                           "children":  [
+
+                                        ],
+                           "right":  0,
+                           "pid":  12268,
+                           "hwnd":  4460438,
+                           "top":  0
+                       }
+                   ],
+    "obs_running":  true,
+    "jw_processes":  [
+                         {
+                             "pid":  12268,
+                             "name":  "JWLibrary",
+                             "mainwindowhandle":  "5312900",
+                             "version":  null,
+                             "mainwindowtitle":  "JW Library",
+                             "child_processes":  [
+                                                     {
+                                                         "mainwindowtitle":  "",
+                                                         "pid":  1944,
+                                                         "name":  "msedgewebview2"
+                                                     },
+                                                     {
+                                                         "mainwindowtitle":  "",
+                                                         "pid":  7056,
+                                                         "name":  "msedgewebview2"
+                                                     },
+                                                     {
+                                                         "mainwindowtitle":  "",
+                                                         "pid":  7376,
+                                                         "name":  "msedgewebview2"
+                                                     },
+                                                     {
+                                                         "mainwindowtitle":  "",
+                                                         "pid":  10884,
+                                                         "name":  "msedgewebview2"
+                                                     },
+                                                     {
+                                                         "mainwindowtitle":  "",
+                                                         "pid":  11928,
+                                                         "name":  "msedgewebview2"
+                                                     },
+                                                     {
+                                                         "mainwindowtitle":  "",
+                                                         "pid":  15536,
+                                                         "name":  "msedgewebview2"
+                                                     },
+                                                     {
+                                                         "mainwindowtitle":  "",
+                                                         "pid":  16608,
+                                                         "name":  "msedgewebview2"
+                                                     },
+                                                     {
+                                                         "mainwindowtitle":  "",
+                                                         "pid":  17224,
+                                                         "name":  "msedgewebview2"
+                                                     },
+                                                     {
+                                                         "mainwindowtitle":  "",
+                                                         "pid":  17304,
+                                                         "name":  "msedgewebview2"
+                                                     },
+                                                     {
+                                                         "mainwindowtitle":  "",
+                                                         "pid":  17780,
+                                                         "name":  "msedgewebview2"
+                                                     },
+                                                     {
+                                                         "mainwindowtitle":  "",
+                                                         "pid":  18056,
+                                                         "name":  "msedgewebview2"
+                                                     },
+                                                     {
+                                                         "mainwindowtitle":  "",
+                                                         "pid":  18096,
+                                                         "name":  "msedgewebview2"
+                                                     },
+                                                     {
+                                                         "mainwindowtitle":  "",
+                                                         "pid":  18408,
+                                                         "name":  "msedgewebview2"
+                                                     },
+                                                     {
+                                                         "mainwindowtitle":  "",
+                                                         "pid":  21112,
+                                                         "name":  "msedgewebview2"
+                                                     },
+                                                     {
+                                                         "mainwindowtitle":  "",
+                                                         "pid":  23632,
+                                                         "name":  "msedgewebview2"
+                                                     },
+                                                     {
+                                                         "mainwindowtitle":  "",
+                                                         "pid":  24288,
+                                                         "name":  "msedgewebview2"
+                                                     },
+                                                     {
+                                                         "mainwindowtitle":  "",
+                                                         "pid":  24312,
+                                                         "name":  "msedgewebview2"
+                                                     },
+                                                     {
+                                                         "mainwindowtitle":  "",
+                                                         "pid":  24496,
+                                                         "name":  "msedgewebview2"
+                                                     },
+                                                     {
+                                                         "mainwindowtitle":  "",
+                                                         "pid":  24512,
+                                                         "name":  "msedgewebview2"
+                                                     },
+                                                     {
+                                                         "mainwindowtitle":  "",
+                                                         "pid":  24672,
+                                                         "name":  "msedgewebview2"
+                                                     },
+                                                     {
+                                                         "mainwindowtitle":  "",
+                                                         "pid":  24680,
+                                                         "name":  "msedgewebview2"
+                                                     },
+                                                     {
+                                                         "mainwindowtitle":  "",
+                                                         "pid":  26456,
+                                                         "name":  "msedgewebview2"
+                                                     },
+                                                     {
+                                                         "mainwindowtitle":  "",
+                                                         "pid":  26480,
+                                                         "name":  "msedgewebview2"
+                                                     },
+                                                     {
+                                                         "mainwindowtitle":  "",
+                                                         "pid":  26988,
+                                                         "name":  "msedgewebview2"
+                                                     },
+                                                     {
+                                                         "mainwindowtitle":  "",
+                                                         "pid":  31916,
+                                                         "name":  "msedgewebview2"
+                                                     },
+                                                     {
+                                                         "mainwindowtitle":  "",
+                                                         "pid":  32892,
+                                                         "name":  "msedgewebview2"
+                                                     },
+                                                     {
+                                                         "mainwindowtitle":  "",
+                                                         "pid":  33348,
+                                                         "name":  "msedgewebview2"
+                                                     },
+                                                     {
+                                                         "mainwindowtitle":  "",
+                                                         "pid":  35972,
+                                                         "name":  "msedgewebview2"
+                                                     },
+                                                     {
+                                                         "mainwindowtitle":  "",
+                                                         "pid":  42608,
+                                                         "name":  "msedgewebview2"
+                                                     }
+                                                 ],
+                             "path":  "C:\\Program Files\\WindowsApps\\WatchtowerBibleandTractSo.45909CDBADF3C_15.9.54.0_x64__5rz59y55nfz3e\\JWLibrary.exe"
+                         }
+                     ],
+    "monitors":  [
+                     {
+                         "width":  1707,
+                         "height":  1067,
+                         "bounds_bottom":  1067,
+                         "primary":  true,
+                         "bounds_top":  0,
+                         "device_name":  "\\\\.\\DISPLAY1",
+                         "working_left":  0,
+                         "bounds_right":  1707,
+                         "bounds_left":  0,
+                         "working_top":  0
+                     },
+                     {
+                         "width":  2560,
+                         "height":  1440,
+                         "bounds_bottom":  1516,
+                         "primary":  false,
+                         "bounds_top":  76,
+                         "device_name":  "\\\\.\\DISPLAY5",
+                         "working_left":  -2560,
+                         "bounds_right":  0,
+                         "bounds_left":  -2560,
+                         "working_top":  76
+                     }
+                 ]
+}

@@ -1,0 +1,310 @@
+{
+  "timestamp_utc": "2026-11-01 14:06:50 UTC",
+  "machine_notes": "PC di sviluppo; NON dati destinatario",
+  "processes": {},
+  "windows_sample": [],
+  "monitors_info": "vedere sezione separata",
+  "media_sessions": "non verificato (richiede WinRT / pywin32)",
+  "notes": [
+    "Processi JWLibrary trovati: 18",
+    "user32 disponibile; EnumWindows possibile ma non eseguito per brevità in questo step."
+  ],
+  "jw_processes_found": [
+    {
+      "pid": 6012,
+      "name": "bash.exe",
+      "cmdline": [
+        "C:\\Users\\patty\\AppData\\Local\\hermes\\tools\\git-2.53.0+3-win32-x64\\usr\\bin\\bash.exe",
+        "-lic",
+        "set +m; uv run python tools/serve.py --port 8765 > C:/Users/patty/AppData/Local/hermes/cache/scratch/jw-live-serve.log 2>&1"
+      ]
+    },
+    {
+      "pid": 7056,
+      "name": "msedgewebview2.exe",
+      "cmdline": [
+        "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\156.0.4314.58\\msedgewebview2.exe",
+        "--type=renderer",
+        "--noerrdialogs",
+        "--user-data-dir=C:\\Users\\patty\\AppData\\Local\\Packages\\WatchtowerBibleandTractSo.45909CDBADF3C_5rz59y55nfz3e\\LocalState\\EBWebView",
+        "--webview-exe-name=JWLibrary.exe",
+        "--webview-exe-version=976908",
+        "--embedded-browser-webview=1",
+        "--video-capture-use-gpu-memory-buffer",
+        "--lang=it",
+        "--js-flags",
+        "--device-scale-factor=1.5",
+        "--num-raster-threads=4",
+        "--enable-main-frame-before-activation",
+        "--renderer-client-id=5",
+        "--js-flags=--ms-user-locale=it_IT",
+        "--ssd-no-pressure-read-main-dll",
+        "--launch-time-ticks=432692006418",
+        "--metrics-shmem-handle=3944,i,8459621660488529311,1909073236355474824,1048576",
+        "--field-trial-handle=2168,i,4874849513082421333,455667309238258170,262144",
+        "--variations-seed-version",
+        "--pseudonymization-salt-handle=2172,i,16553732650783623104,12613314380110617987,4",
+        "--trace-process-track-uuid=3190708990997080739",
+        "--mojo-platform-channel-handle=3792",
+        "/pfhostedapp:1a61b9219874a9d17ed36e67cfd3dc984f0cd21e",
+        "/prefetch:1"
+      ]
+    },
+    {
+      "pid": 12268,
+      "name": "JWLibrary.exe",
+      "cmdline": [
+        "C:\\Program Files\\WindowsApps\\WatchtowerBibleandTractSo.45909CDBADF3C_15.9.54.0_x64__5rz59y55nfz3e\\JWLibrary.exe",
+        "-ServerName:App.AppXbctmj4gw116tnpq78p405dttecm6h5sv.mca"
+      ]
+    },
+    {
+      "pid": 15536,
+      "name": "msedgewebview2.exe",
+      "cmdline": [
+        "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\156.0.4314.58\\msedgewebview2.exe",
+        "--embedded-browser-webview=1",
+        "--webview-exe-name=JWLibrary.exe",
+        "--webview-exe-version=976908",
+        "--user-data-dir=C:\\Users\\patty\\AppData\\Local\\Packages\\WatchtowerBibleandTractSo.45909CDBADF3C_5rz59y55nfz3e\\LocalState\\EBWebView",
+        "--noerrdialogs",
+        "--lang=it-IT",
+        "--mojo-named-platform-channel-pipe=12268.34752.18129820181472817491",
+        "/pfhostedapp:1a61b9219874a9d17ed36e67cfd3dc984f0cd21e"
+      ]
+    },
+    {
+      "pid": 17224,
+      "name": "msedgewebview2.exe",
+      "cmdline": [
+        "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\156.0.4314.58\\msedgewebview2.exe",
+        "--type=gpu-process",
+        "--gpu-recent-crash-count=0",
+        "--noerrdialogs",
+        "--user-data-dir=C:\\Users\\patty\\AppData\\Local\\Packages\\WatchtowerBibleandTractSo.45909CDBADF3C_5rz59y55nfz3e\\LocalState\\EBWebView",
+        "--webview-exe-name=JWLibrary.exe",
+        "--webview-exe-version=976908",
+        "--embedded-browser-webview=1",
+        "--gpu-preferences=WAAAAAAAAADgAAAEAAAAAAAAAAAAAGAAQAAAAAAAAAADAAAAAAAAADgAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAKAAAAAAAAAAoAAAAAAAAAAgAAAAAAAAAEAAAAAIAAAABAAAAAAAAAAgAAAAAAAAACAAAAAAAAAA=",
+        "--startup-read-main-dll",
+        "--metrics-shmem-handle=2028,i,5544093949027179902,12181622537351906109,262144",
+        "--field-trial-handle=2168,i,4874849513082421333,455667309238258170,262144",
+        "--variations-seed-version",
+        "--pseudonymization-salt-handle=2172,i,16553732650783623104,12613314380110617987,4",
+        "--trace-process-track-uuid=3190708988185955192",
+        "--mojo-platform-channel-handle=2164",
+        "/prefetch:2",
+        "/pfhostedapp:1a61b9219874a9d17ed36e67cfd3dc984f0cd21e"
+      ]
+    },
+    {
+      "pid": 21112,
+      "name": "msedgewebview2.exe",
+      "cmdline": [
+        "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\156.0.4314.58\\msedgewebview2.exe",
+        "--type=renderer",
+        "--noerrdialogs",
+        "--user-data-dir=C:\\Users\\patty\\AppData\\Local\\Packages\\WatchtowerBibleandTractSo.45909CDBADF3C_5rz59y55nfz3e\\LocalState\\EBWebView",
+        "--webview-exe-name=JWLibrary.exe",
+        "--webview-exe-version=976908",
+        "--embedded-browser-webview=1",
+        "--video-capture-use-gpu-memory-buffer",
+        "--lang=it",
+        "--js-flags",
+        "--device-scale-factor=1.5",
+        "--num-raster-threads=4",
+        "--enable-main-frame-before-activation",
+        "--renderer-client-id=7",
+        "--js-flags=--ms-user-locale=it_IT",
+        "--skip-read-main-dll",
+        "--launch-time-ticks=432696193396",
+        "--metrics-shmem-handle=4820,i,10146822547605297862,7663505439076791483,1048576",
+        "--field-trial-handle=2168,i,4874849513082421333,455667309238258170,262144",
+        "--variations-seed-version",
+        "--pseudonymization-salt-handle=2172,i,16553732650783623104,12613314380110617987,4",
+        "--trace-process-track-uuid=3190708992871164437",
+        "--mojo-platform-channel-handle=4608",
+        "/pfhostedapp:1a61b9219874a9d17ed36e67cfd3dc984f0cd21e",
+        "/prefetch:1"
+      ]
+    },
+    {
+      "pid": 21264,
+      "name": "bash.exe",
+      "cmdline": [
+        "C:\\Users\\patty\\AppData\\Local\\hermes\\tools\\git-2.53.0+3-win32-x64\\usr\\bin\\bash.exe",
+        "-c",
+        "source /c/Users/patty/AppData/Local/hermes/cache/terminal/hermes-snap-11d5cfb47c6c.sh >/dev/null 2>&1 || true\nexport AI_AGENT=\"${AI_AGENT:-hermes-agent}\" HERMES_AGENT=\"${HERMES_AGENT:-true}\"\nexport GIT_PAGER=\"${GIT_PAGER:-cat}\" PAGER=\"${PAGER:-cat}\"\nbuiltin cd -- /c/Users/patty/AppData/Local/hermes/cache/scratch/jw-memory-orchestrator/dashboard_v1 || exit 126\neval 'cd \"C:/Users/patty/AppData/Local/hermes/cache/scratch/jw-memory-orchestrator/dashboard_v1\" && /c/Users/patty/.local/bin/python3.12 -c \"\nlines=open('\\''index.html'\\'',encoding='\\''utf-8'\\'').read().split('\\''\\n'\\'')\ni89,i90=88,89\nassert '\\''matteo_nuova_base'\\'' in lines[i89] and '\\''paolo_nuova_base'\\'' in lines[i90], (lines[i89][:60],lines[i90][:60])\nlines[i89],lines[i90]=lines[i90],lines[i89]\nopen('\\''index.html'\\'','\\''w'\\'',encoding='\\''utf-8'\\'').write('\\''\\n'\\''.join(lines))\nprint('\\''ordine: Aaronne, Paolo, Matteo'\\'')\n\" && (/c/Users/patty/.local/bin/python3.12 -m http.server 8137 >/dev/null 2>&1 &) && sleep 2 && curl -s -o /dev/null -w \"index:%{http_code}\\n\" http://127.0.0.1:8137/index.html && curl -s -o /dev/null -w \"paolo:%{http_code}\\n\" http://127.0.0.1:8137/paolo_nuova_base.html && curl -s -o /dev/null -w \"matteo:%{http_code}\\n\" http://127.0.0.1:8137/matteo_nuova_base.html && curl -s -o /dev/null -w \"paolo_data:%{http_code}\\n\" http://127.0.0.1:8137/paolo_nuova_base_data.json && curl -s -o /dev/null -w \"matteo_data:%{http_code}\\n\" http://127.0.0.1:8137/matteo_nuova_base_data.json'\n__hermes_ec=$?\numask 077\n__hermes_snap_tmp=$(mktemp /c/Users/patty/AppData/Local/hermes/cache/terminal/hermes-snap-11d5cfb47c6c.sh.tmp.XXXXXXXXXX) && { { ( unset ${!HERMES_SESSION_*} ${!HERMES_CRON_AUTO_DELIVER_*} ${!HERMES_BROWSER_CONTROL_*} AI_AGENT HERMES_AGENT HERMES_DELEGATED_CHILD_CONTEXT HERMES_CRON_SESSION ${!HERMES_RPC_*} HERMES_KERNEL_DIR HERMES_UI_SESSION_ID 2>/dev/null; export -p; ) || true; } > \"$__hermes_snap_tmp\" && mv -f \"$__hermes_snap_tmp\" /c/Users/patty/AppData/Local/hermes/cache/terminal/hermes-snap-11d5cfb47c6c.sh; } 2>/dev/null || rm -f \"$__hermes_snap_tmp\" 2>/dev/null || true\nprintf '\\n__HERMES_CWD_11d5cfb47c6c__%s__HERMES_CWD_11d5cfb47c6c__\\n' \"$(pwd -P)\"\nexit $__hermes_ec"
+      ]
+    },
+    {
+      "pid": 27208,
+      "name": "python.exe",
+      "cmdline": [
+        "C:\\Users\\patty\\AppData\\Local\\hermes\\installs\\deaf09e3aece4381\\environments\\0fcee16e34c44c8492b4496ce0761377\\venv\\Scripts\\python.exe",
+        "-m",
+        "http.server",
+        "8137",
+        "--directory",
+        "C:/Users/patty/AppData/Local/hermes/cache/scratch/jw-memory-orchestrator/dashboard_v1"
+      ]
+    },
+    {
+      "pid": 27664,
+      "name": "VaultPlugin.exe",
+      "cmdline": [
+        "C:\\Program Files\\Lenovo\\Ready For Assistant\\vaultPlugin\\VaultPlugin.exe",
+        "eyJwb3J0Ijo1NTA2OSwiZnAiOiJRbUlOQWs2K3VtZ0c1L1UybnlINTdKZ0F0RmY3aFQwanNqVEFkTmFKL2FNPSIsIm1vZHVsZSI6IlZhdWx0UGx1Z2luIiwidG9rZW4iOiIxWnBnTkZVYnRjT1ZoaWkiLCJsb2dMZXZlbCI6MX0=",
+        "it-IT"
+      ]
+    },
+    {
+      "pid": 32892,
+      "name": "msedgewebview2.exe",
+      "cmdline": [
+        "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\156.0.4314.58\\msedgewebview2.exe",
+        "--type=utility",
+        "--utility-sub-type=network.mojom.NetworkService",
+        "--lang=it",
+        "--service-sandbox-type=none",
+        "--noerrdialogs",
+        "--user-data-dir=C:\\Users\\patty\\AppData\\Local\\Packages\\WatchtowerBibleandTractSo.45909CDBADF3C_5rz59y55nfz3e\\LocalState\\EBWebView",
+        "--webview-exe-name=JWLibrary.exe",
+        "--webview-exe-version=976908",
+        "--embedded-browser-webview=1",
+        "--startup-read-main-dll",
+        "--metrics-shmem-handle=2336,i,15280872233121809291,14250524015951747381,524288",
+        "--field-trial-handle=2168,i,4874849513082421333,455667309238258170,262144",
+        "--variations-seed-version",
+        "--pseudonymization-salt-handle=2172,i,16553732650783623104,12613314380110617987,4",
+        "--trace-process-track-uuid=3190708989122997041",
+        "--mojo-platform-channel-handle=2404",
+        "/prefetch:11",
+        "/pfhostedapp:1a61b9219874a9d17ed36e67cfd3dc984f0cd21e"
+      ]
+    },
+    {
+      "pid": 33348,
+      "name": "msedgewebview2.exe",
+      "cmdline": [
+        "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\156.0.4314.58\\msedgewebview2.exe",
+        "--type=utility",
+        "--utility-sub-type=storage.mojom.StorageService",
+        "--lang=it",
+        "--service-sandbox-type=service",
+        "--noerrdialogs",
+        "--user-data-dir=C:\\Users\\patty\\AppData\\Local\\Packages\\WatchtowerBibleandTractSo.45909CDBADF3C_5rz59y55nfz3e\\LocalState\\EBWebView",
+        "--webview-exe-name=JWLibrary.exe",
+        "--webview-exe-version=976908",
+        "--embedded-browser-webview=1",
+        "--startup-read-main-dll",
+        "--metrics-shmem-handle=2704,i,11702827588290166671,15311397759685692360,524288",
+        "--field-trial-handle=2168,i,4874849513082421333,455667309238258170,262144",
+        "--variations-seed-version",
+        "--pseudonymization-salt-handle=2172,i,16553732650783623104,12613314380110617987,4",
+        "--trace-process-track-uuid=3190708990060038890",
+        "--mojo-platform-channel-handle=2744",
+        "/prefetch:13",
+        "/pfhostedapp:1a61b9219874a9d17ed36e67cfd3dc984f0cd21e"
+      ]
+    },
+    {
+      "pid": 33624,
+      "name": "bash.exe",
+      "cmdline": [
+        "C:\\Users\\patty\\AppData\\Local\\hermes\\tools\\git-2.53.0+3-win32-x64\\usr\\bin\\bash.exe",
+        "-lic",
+        "set +m; C:/Users/patty/AppData/Local/hermes/cache/scratch/jw-memory-orchestrator/storm_runtime_venv/Scripts/python.exe -m http.server 8139 --directory C:/Users/patty/AppData/Local/hermes/cache/scratch/jw-verify-dashboard"
+      ]
+    },
+    {
+      "pid": 33636,
+      "name": "bash.exe",
+      "cmdline": [
+        "C:\\Users\\patty\\AppData\\Local\\hermes\\tools\\git-2.53.0+3-win32-x64\\usr\\bin\\bash.exe",
+        "-lic",
+        "set +m; uv run python tools/serve.py --port 8765 > C:/Users/patty/AppData/Local/hermes/cache/scratch/jw-live-serve.log 2>&1"
+      ]
+    },
+    {
+      "pid": 34312,
+      "name": "python.exe",
+      "cmdline": [
+        "C:\\Users\\patty\\AppData\\Local\\hermes\\installs\\deaf09e3aece4381\\environments\\0fcee16e34c44c8492b4496ce0761377\\venv\\Scripts\\python.exe",
+        "-m",
+        "http.server",
+        "8137",
+        "--directory",
+        "C:/Users/patty/AppData/Local/hermes/cache/scratch/jw-memory-orchestrator/dashboard_v1"
+      ]
+    },
+    {
+      "pid": 35972,
+      "name": "msedgewebview2.exe",
+      "cmdline": [
+        "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\156.0.4314.58\\msedgewebview2.exe",
+        "--type=renderer",
+        "--noerrdialogs",
+        "--user-data-dir=C:\\Users\\patty\\AppData\\Local\\Packages\\WatchtowerBibleandTractSo.45909CDBADF3C_5rz59y55nfz3e\\LocalState\\EBWebView",
+        "--webview-exe-name=JWLibrary.exe",
+        "--webview-exe-version=976908",
+        "--embedded-browser-webview=1",
+        "--video-capture-use-gpu-memory-buffer",
+        "--lang=it",
+        "--js-flags",
+        "--device-scale-factor=1.5",
+        "--num-raster-threads=4",
+        "--enable-main-frame-before-activation",
+        "--renderer-client-id=6",
+        "--js-flags=--ms-user-locale=it_IT",
+        "--skip-read-main-dll",
+        "--launch-time-ticks=432694622374",
+        "--metrics-shmem-handle=4512,i,8287626266774140803,2465389788659139197,1048576",
+        "--field-trial-handle=2168,i,4874849513082421333,455667309238258170,262144",
+        "--variations-seed-version",
+        "--pseudonymization-salt-handle=2172,i,16553732650783623104,12613314380110617987,4",
+        "--trace-process-track-uuid=3190708991934122588",
+        "--mojo-platform-channel-handle=4464",
+        "/pfhostedapp:1a61b9219874a9d17ed36e67cfd3dc984f0cd21e",
+        "/prefetch:1"
+      ]
+    },
+    {
+      "pid": 36372,
+      "name": "python.exe",
+      "cmdline": [
+        "D:\\JW_WIKI_RESEARCHER\\.venv\\Scripts\\python.exe",
+        "tools/serve.py",
+        "--port",
+        "8765"
+      ]
+    },
+    {
+      "pid": 36620,
+      "name": "python.exe",
+      "cmdline": [
+        "C:\\Users\\patty\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\python.exe",
+        "-m",
+        "http.server",
+        "8139",
+        "--directory",
+        "C:/Users/patty/AppData/Local/hermes/cache/scratch/jw-verify-dashboard"
+      ]
+    },
+    {
+      "pid": 37852,
+      "name": "python.exe",
+      "cmdline": [
+        "C:\\Users\\patty\\AppData\\Local\\hermes\\cache\\scratch\\jw-memory-orchestrator\\storm_runtime_venv\\Scripts\\python.exe",
+        "-m",
+        "http.server",
+        "8139",
+        "--directory",
+        "C:/Users/patty/AppData/Local/hermes/cache/scratch/jw-verify-dashboard"
+      ]
+    }
+  ],
+  "windows_api_available": true,
+  "wmic_desktop_monitors_raw": "errore: [WinError 2] Impossibile trovare il file specificato",
+  "ps_jw_result": "{\"Name\":\"JWLibrary.exe\",\"ProcessId\":12268,\"CommandLine\":\"\\\"C:\\\\Program Files\\\\WindowsApps\\\\WatchtowerBibleandTractSo.45909CDBADF3C_15.9.54.0_x64__5rz59y55nfz3e\\\\JWLibrary.exe\\\" -ServerName:App.AppXbctmj4gw116tnpq78p405dttecm6h5sv.mca\"}\n"
+}

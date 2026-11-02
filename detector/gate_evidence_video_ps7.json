@@ -1,0 +1,283 @@
+{
+  "jw_webview_wrappers": [],
+  "conclusion": "WinRT media session manager non disponibile: impossibile valutare segnale media",
+  "obs_running": true,
+  "media_sessions": {
+    "available": false,
+    "error": "Tipo WinRT GlobalSystemMediaTransportControlsSessionManager non risolto",
+    "manager_obtained": false,
+    "other_sessions_count": 0,
+    "sessions_enumerated": false,
+    "jw_sessions": []
+  },
+  "jw_processes": [
+    {
+      "mainwindowhandle": "5312900",
+      "version": null,
+      "path": "C:\\Program Files\\WindowsApps\\WatchtowerBibleandTractSo.45909CDBADF3C_15.9.54.0_x64__5rz59y55nfz3e\\JWLibrary.exe",
+      "mainwindowtitle": "JW Library",
+      "child_processes": [
+        {
+          "name": "msedgewebview2",
+          "pid": 1944,
+          "mainwindowtitle": ""
+        },
+        {
+          "name": "msedgewebview2",
+          "pid": 7056,
+          "mainwindowtitle": ""
+        },
+        {
+          "name": "msedgewebview2",
+          "pid": 7376,
+          "mainwindowtitle": ""
+        },
+        {
+          "name": "msedgewebview2",
+          "pid": 10884,
+          "mainwindowtitle": ""
+        },
+        {
+          "name": "msedgewebview2",
+          "pid": 11928,
+          "mainwindowtitle": ""
+        },
+        {
+          "name": "msedgewebview2",
+          "pid": 15536,
+          "mainwindowtitle": ""
+        },
+        {
+          "name": "msedgewebview2",
+          "pid": 16608,
+          "mainwindowtitle": ""
+        },
+        {
+          "name": "msedgewebview2",
+          "pid": 17224,
+          "mainwindowtitle": ""
+        },
+        {
+          "name": "msedgewebview2",
+          "pid": 17304,
+          "mainwindowtitle": ""
+        },
+        {
+          "name": "msedgewebview2",
+          "pid": 17780,
+          "mainwindowtitle": ""
+        },
+        {
+          "name": "msedgewebview2",
+          "pid": 18056,
+          "mainwindowtitle": ""
+        },
+        {
+          "name": "msedgewebview2",
+          "pid": 18096,
+          "mainwindowtitle": ""
+        },
+        {
+          "name": "msedgewebview2",
+          "pid": 18408,
+          "mainwindowtitle": ""
+        },
+        {
+          "name": "msedgewebview2",
+          "pid": 21112,
+          "mainwindowtitle": ""
+        },
+        {
+          "name": "msedgewebview2",
+          "pid": 23632,
+          "mainwindowtitle": ""
+        },
+        {
+          "name": "msedgewebview2",
+          "pid": 24288,
+          "mainwindowtitle": ""
+        },
+        {
+          "name": "msedgewebview2",
+          "pid": 24312,
+          "mainwindowtitle": ""
+        },
+        {
+          "name": "msedgewebview2",
+          "pid": 24496,
+          "mainwindowtitle": ""
+        },
+        {
+          "name": "msedgewebview2",
+          "pid": 24512,
+          "mainwindowtitle": ""
+        },
+        {
+          "name": "msedgewebview2",
+          "pid": 24672,
+          "mainwindowtitle": ""
+        },
+        {
+          "name": "msedgewebview2",
+          "pid": 24680,
+          "mainwindowtitle": ""
+        },
+        {
+          "name": "msedgewebview2",
+          "pid": 26456,
+          "mainwindowtitle": ""
+        },
+        {
+          "name": "msedgewebview2",
+          "pid": 26480,
+          "mainwindowtitle": ""
+        },
+        {
+          "name": "msedgewebview2",
+          "pid": 26988,
+          "mainwindowtitle": ""
+        },
+        {
+          "name": "msedgewebview2",
+          "pid": 31916,
+          "mainwindowtitle": ""
+        },
+        {
+          "name": "msedgewebview2",
+          "pid": 32892,
+          "mainwindowtitle": ""
+        },
+        {
+          "name": "msedgewebview2",
+          "pid": 33348,
+          "mainwindowtitle": ""
+        },
+        {
+          "name": "msedgewebview2",
+          "pid": 35972,
+          "mainwindowtitle": ""
+        },
+        {
+          "name": "msedgewebview2",
+          "pid": 42608,
+          "mainwindowtitle": ""
+        }
+      ],
+      "pid": 12268,
+      "name": "JWLibrary"
+    }
+  ],
+  "obs_version": null,
+  "monitors": [
+    {
+      "height": 1067,
+      "working_top": 0,
+      "bounds_right": 1707,
+      "working_left": 0,
+      "width": 1707,
+      "primary": true,
+      "bounds_bottom": 1067,
+      "bounds_top": 0,
+      "device_name": "\\\\.\\DISPLAY1",
+      "bounds_left": 0
+    },
+    {
+      "height": 1440,
+      "working_top": 76,
+      "bounds_right": 0,
+      "working_left": -2560,
+      "width": 2560,
+      "primary": false,
+      "bounds_bottom": 1516,
+      "bounds_top": 76,
+      "device_name": "\\\\.\\DISPLAY5",
+      "bounds_left": -2560
+    }
+  ],
+  "timestamp": "2026-11-01T16:01:26+01:00",
+  "ui_automation": {
+    "root_element_found": false,
+    "available": true,
+    "jw_elements": [],
+    "error": "Non è possibile trovare il tipo ''UIAutomation.AutomationElement''."
+  },
+  "jw_windows": [
+    {
+      "left": 0,
+      "right": 1200,
+      "classname": "Windows.UI.Core.CoreWindow",
+      "pid": 12268,
+      "hwnd": 5312900,
+      "top": 33,
+      "title": "JW Library",
+      "children": [
+        {
+          "hwnd": 11931616,
+          "bottom": 33,
+          "pid": 12268,
+          "left": 0,
+          "right": 0,
+          "classname": "Windows.UI.Core.CoreComponentInputSource",
+          "top": 33,
+          "title": "CoreInput"
+        },
+        {
+          "hwnd": 16583286,
+          "bottom": 33,
+          "pid": 12268,
+          "left": 0,
+          "right": 0,
+          "classname": "Windows.UI.Core.CoreComponentInputSource",
+          "top": 33,
+          "title": "CoreInput"
+        }
+      ],
+      "bottom": 933
+    },
+    {
+      "left": 1197,
+      "right": 1344,
+      "classname": "Xaml_WindowedPopupClass",
+      "pid": 12268,
+      "hwnd": 4984992,
+      "top": 879,
+      "title": "Host popup",
+      "children": [],
+      "bottom": 1000
+    },
+    {
+      "left": 1318,
+      "right": 1676,
+      "classname": "Xaml_WindowedPopupClass",
+      "pid": 12268,
+      "hwnd": 4198832,
+      "top": 719,
+      "title": "Host popup",
+      "children": [],
+      "bottom": 934
+    },
+    {
+      "left": 0,
+      "right": 0,
+      "classname": "MSCTFIME UI",
+      "pid": 12268,
+      "hwnd": 38146050,
+      "top": 0,
+      "title": "MSCTFIME UI",
+      "children": [],
+      "bottom": 0
+    },
+    {
+      "left": 0,
+      "right": 0,
+      "classname": "IME",
+      "pid": 12268,
+      "hwnd": 4460438,
+      "top": 0,
+      "title": "Default IME",
+      "children": [],
+      "bottom": 0
+    }
+  ],
+  "os_version": "Microsoft Windows 11 Home 10.0.26300 Build 26300"
+}

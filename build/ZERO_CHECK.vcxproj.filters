@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\DZWebDesign\obs_helper_jw\obs_helper_jw\build\CMakeFiles\7ceb2b93f8b174c51cdbf72a59af6eca\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{77B430DB-C41A-3F65-90B2-7689CC9922D2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

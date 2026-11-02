@@ -1,0 +1,10 @@
+^D:\DZWEBDESIGN\OBS_HELPER_JW\OBS_HELPER_JW\CMAKELISTS.TXT
+setlocal
+C:\Users\patty\AppData\Local\Microsoft\WinGet\Packages\Kitware.CMake_Microsoft.Winget.Source_8wekyb3d8bbwe\cmake-4.4.4-windows-x86_64\bin\cmake.exe -SD:/DZWebDesign/obs_helper_jw/obs_helper_jw -BD:/DZWebDesign/obs_helper_jw/obs_helper_jw/build --check-stamp-file D:/DZWebDesign/obs_helper_jw/obs_helper_jw/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

@@ -1,0 +1,27 @@
+# CMake generation dependency list for this directory.
+C:/Users/patty/AppData/Local/Microsoft/WinGet/Packages/Kitware.CMake_Microsoft.Winget.Source_8wekyb3d8bbwe/cmake-4.4.4-windows-x86_64/share/cmake-4.4/Modules/CMakeCXXInformation.cmake
+C:/Users/patty/AppData/Local/Microsoft/WinGet/Packages/Kitware.CMake_Microsoft.Winget.Source_8wekyb3d8bbwe/cmake-4.4.4-windows-x86_64/share/cmake-4.4/Modules/CMakeCommonLanguageInclude.cmake
+C:/Users/patty/AppData/Local/Microsoft/WinGet/Packages/Kitware.CMake_Microsoft.Winget.Source_8wekyb3d8bbwe/cmake-4.4.4-windows-x86_64/share/cmake-4.4/Modules/CMakeGenericSystem.cmake
+C:/Users/patty/AppData/Local/Microsoft/WinGet/Packages/Kitware.CMake_Microsoft.Winget.Source_8wekyb3d8bbwe/cmake-4.4.4-windows-x86_64/share/cmake-4.4/Modules/CMakeInitializeConfigs.cmake
+C:/Users/patty/AppData/Local/Microsoft/WinGet/Packages/Kitware.CMake_Microsoft.Winget.Source_8wekyb3d8bbwe/cmake-4.4.4-windows-x86_64/share/cmake-4.4/Modules/CMakeLanguageInformation.cmake
+C:/Users/patty/AppData/Local/Microsoft/WinGet/Packages/Kitware.CMake_Microsoft.Winget.Source_8wekyb3d8bbwe/cmake-4.4.4-windows-x86_64/share/cmake-4.4/Modules/CMakeRCInformation.cmake
+C:/Users/patty/AppData/Local/Microsoft/WinGet/Packages/Kitware.CMake_Microsoft.Winget.Source_8wekyb3d8bbwe/cmake-4.4.4-windows-x86_64/share/cmake-4.4/Modules/CMakeSystemSpecificInformation.cmake
+C:/Users/patty/AppData/Local/Microsoft/WinGet/Packages/Kitware.CMake_Microsoft.Winget.Source_8wekyb3d8bbwe/cmake-4.4.4-windows-x86_64/share/cmake-4.4/Modules/CMakeSystemSpecificInitialize.cmake
+C:/Users/patty/AppData/Local/Microsoft/WinGet/Packages/Kitware.CMake_Microsoft.Winget.Source_8wekyb3d8bbwe/cmake-4.4.4-windows-x86_64/share/cmake-4.4/Modules/Compiler/CMakeCommonCompilerMacros.cmake
+C:/Users/patty/AppData/Local/Microsoft/WinGet/Packages/Kitware.CMake_Microsoft.Winget.Source_8wekyb3d8bbwe/cmake-4.4.4-windows-x86_64/share/cmake-4.4/Modules/Compiler/MSVC-CXX.cmake
+C:/Users/patty/AppData/Local/Microsoft/WinGet/Packages/Kitware.CMake_Microsoft.Winget.Source_8wekyb3d8bbwe/cmake-4.4.4-windows-x86_64/share/cmake-4.4/Modules/Compiler/MSVC.cmake
+C:/Users/patty/AppData/Local/Microsoft/WinGet/Packages/Kitware.CMake_Microsoft.Winget.Source_8wekyb3d8bbwe/cmake-4.4.4-windows-x86_64/share/cmake-4.4/Modules/Internal/CMakeCXXLinkerInformation.cmake
+C:/Users/patty/AppData/Local/Microsoft/WinGet/Packages/Kitware.CMake_Microsoft.Winget.Source_8wekyb3d8bbwe/cmake-4.4.4-windows-x86_64/share/cmake-4.4/Modules/Internal/CMakeCommonLinkerInformation.cmake
+C:/Users/patty/AppData/Local/Microsoft/WinGet/Packages/Kitware.CMake_Microsoft.Winget.Source_8wekyb3d8bbwe/cmake-4.4.4-windows-x86_64/share/cmake-4.4/Modules/Linker/MSVC-CXX.cmake
+C:/Users/patty/AppData/Local/Microsoft/WinGet/Packages/Kitware.CMake_Microsoft.Winget.Source_8wekyb3d8bbwe/cmake-4.4.4-windows-x86_64/share/cmake-4.4/Modules/Linker/MSVC.cmake
+C:/Users/patty/AppData/Local/Microsoft/WinGet/Packages/Kitware.CMake_Microsoft.Winget.Source_8wekyb3d8bbwe/cmake-4.4.4-windows-x86_64/share/cmake-4.4/Modules/Platform/Linker/Windows-MSVC-CXX.cmake
+C:/Users/patty/AppData/Local/Microsoft/WinGet/Packages/Kitware.CMake_Microsoft.Winget.Source_8wekyb3d8bbwe/cmake-4.4.4-windows-x86_64/share/cmake-4.4/Modules/Platform/Linker/Windows-MSVC.cmake
+C:/Users/patty/AppData/Local/Microsoft/WinGet/Packages/Kitware.CMake_Microsoft.Winget.Source_8wekyb3d8bbwe/cmake-4.4.4-windows-x86_64/share/cmake-4.4/Modules/Platform/Windows-Initialize.cmake
+C:/Users/patty/AppData/Local/Microsoft/WinGet/Packages/Kitware.CMake_Microsoft.Winget.Source_8wekyb3d8bbwe/cmake-4.4.4-windows-x86_64/share/cmake-4.4/Modules/Platform/Windows-MSVC-CXX.cmake
+C:/Users/patty/AppData/Local/Microsoft/WinGet/Packages/Kitware.CMake_Microsoft.Winget.Source_8wekyb3d8bbwe/cmake-4.4.4-windows-x86_64/share/cmake-4.4/Modules/Platform/Windows-MSVC.cmake
+C:/Users/patty/AppData/Local/Microsoft/WinGet/Packages/Kitware.CMake_Microsoft.Winget.Source_8wekyb3d8bbwe/cmake-4.4.4-windows-x86_64/share/cmake-4.4/Modules/Platform/Windows.cmake
+C:/Users/patty/AppData/Local/Microsoft/WinGet/Packages/Kitware.CMake_Microsoft.Winget.Source_8wekyb3d8bbwe/cmake-4.4.4-windows-x86_64/share/cmake-4.4/Modules/Platform/WindowsPaths.cmake
+D:/DZWebDesign/obs_helper_jw/obs_helper_jw/CMakeLists.txt
+D:/DZWebDesign/obs_helper_jw/obs_helper_jw/build/CMakeFiles/4.4.4/CMakeCXXCompiler.cmake
+D:/DZWebDesign/obs_helper_jw/obs_helper_jw/build/CMakeFiles/4.4.4/CMakeRCCompiler.cmake
+D:/DZWebDesign/obs_helper_jw/obs_helper_jw/build/CMakeFiles/4.4.4/CMakeSystem.cmake

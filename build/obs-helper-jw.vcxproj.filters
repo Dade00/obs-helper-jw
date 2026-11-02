@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\DZWebDesign\obs_helper_jw\obs_helper_jw\src\obs_helper_jw.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\DZWebDesign\obs_helper_jw\obs_helper_jw\src\detector\detector_impl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\DZWebDesign\obs_helper_jw\obs_helper_jw\src\state_machine\state_machine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\DZWebDesign\obs_helper_jw\obs_helper_jw\src\obs_adapter\obs_adapter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\DZWebDesign\obs_helper_jw\obs_helper_jw\src\settings\settings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\DZWebDesign\obs_helper_jw\obs_helper_jw\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{9031C40C-4524-39B8-804E-27CD5C7388B2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

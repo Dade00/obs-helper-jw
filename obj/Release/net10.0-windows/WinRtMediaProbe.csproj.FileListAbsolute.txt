@@ -1,0 +1,17 @@
+D:\DZWebDesign\obs_helper_jw\detector_test\WinRtMediaProbe\bin\Release\net10.0-windows\WinRtMediaProbe.exe
+D:\DZWebDesign\obs_helper_jw\detector_test\WinRtMediaProbe\bin\Release\net10.0-windows\WinRtMediaProbe.deps.json
+D:\DZWebDesign\obs_helper_jw\detector_test\WinRtMediaProbe\bin\Release\net10.0-windows\WinRtMediaProbe.runtimeconfig.json
+D:\DZWebDesign\obs_helper_jw\detector_test\WinRtMediaProbe\bin\Release\net10.0-windows\WinRtMediaProbe.dll
+D:\DZWebDesign\obs_helper_jw\detector_test\WinRtMediaProbe\bin\Release\net10.0-windows\WinRtMediaProbe.pdb
+D:\DZWebDesign\obs_helper_jw\detector_test\WinRtMediaProbe\bin\Release\net10.0-windows\Microsoft.Windows.SDK.NET.dll
+D:\DZWebDesign\obs_helper_jw\detector_test\WinRtMediaProbe\bin\Release\net10.0-windows\WinRT.Runtime.dll
+D:\DZWebDesign\obs_helper_jw\detector_test\WinRtMediaProbe\obj\Release\net10.0-windows\WinRtMediaProbe.GeneratedMSBuildEditorConfig.editorconfig
+D:\DZWebDesign\obs_helper_jw\detector_test\WinRtMediaProbe\obj\Release\net10.0-windows\WinRtMediaProbe.AssemblyInfoInputs.cache
+D:\DZWebDesign\obs_helper_jw\detector_test\WinRtMediaProbe\obj\Release\net10.0-windows\WinRtMediaProbe.AssemblyInfo.cs
+D:\DZWebDesign\obs_helper_jw\detector_test\WinRtMediaProbe\obj\Release\net10.0-windows\WinRtMediaProbe.csproj.CoreCompileInputs.cache
+D:\DZWebDesign\obs_helper_jw\detector_test\WinRtMediaProbe\obj\Release\net10.0-windows\WinRtMed.FBE64CBC.Up2Date
+D:\DZWebDesign\obs_helper_jw\detector_test\WinRtMediaProbe\obj\Release\net10.0-windows\WinRtMediaProbe.dll
+D:\DZWebDesign\obs_helper_jw\detector_test\WinRtMediaProbe\obj\Release\net10.0-windows\refint\WinRtMediaProbe.dll
+D:\DZWebDesign\obs_helper_jw\detector_test\WinRtMediaProbe\obj\Release\net10.0-windows\WinRtMediaProbe.pdb
+D:\DZWebDesign\obs_helper_jw\detector_test\WinRtMediaProbe\obj\Release\net10.0-windows\WinRtMediaProbe.genruntimeconfig.cache
+D:\DZWebDesign\obs_helper_jw\detector_test\WinRtMediaProbe\obj\Release\net10.0-windows\ref\WinRtMediaProbe.dll

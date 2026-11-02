@@ -294,6 +294,9 @@ function script_description()
     return "OBS Helper JW — Switcha automaticamente sulla scena multimediale quando JW Library presenta video su uscita secondaria. Torna alla scena precedente al termine."
 end
 
+-- Tick periodico usando obs.timer_add (metodo standard OBS Lua)
+local tick_interval_ms = 500
+
 function script_load(settings_ud)
     -- Legge impostazioni da settings_ud (userdata OBS obs_data_t)
     settings.enabled = obs.obs_data_get_bool(settings_ud, "enabled") or false
@@ -310,24 +313,20 @@ function script_load(settings_ud)
         end
     end
 
+    obs.blog(obs.LOG_INFO, "[OBS Helper JW] Caricato. enabled=" .. tostring(settings.enabled) ..
+        " helper=" .. settings.helper_path .. " scene=" .. settings.media_scene)
+
     state = "IDLE"
     saved_scene = ""
     cycle_armed = false
     last_reason = "caricato"
+
+    -- Avvia timer periodico per evaluate (ogni 500ms)
+    obs.timer_add(evaluate, tick_interval_ms)
 end
 
 function script_unload()
+    obs.timer_remove(evaluate)
     state = "DISABLED"
-end
-
--- Tick periodico (non bloccante)
-local tick_interval = 0.5
-local last_tick = 0
-
-function script_tick(seconds)
-    last_tick = last_tick + seconds
-    if last_tick < tick_interval then return end
-    last_tick = 0
-
-    evaluate()
+    obs.blog(obs.LOG_INFO, "[OBS Helper JW] Scaricato")
 end

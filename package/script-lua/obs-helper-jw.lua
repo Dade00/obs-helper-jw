@@ -70,11 +70,9 @@ local function read_jw_state()
         return nil, "helper_path non configurato"
     end
 
-    obs.blog(obs.LOG_INFO, "[OBS Helper JW] eseguo helper: " .. settings.helper_path)
+    obs.blog(obs.LOG_INFO, "[OBS Helper JW] leggo output helper (già in esecuzione): " .. settings.helper_path)
 
     local output_file = os.getenv("TEMP") .. "\\obs_helper_jw_state.json"
-    local cmd = string.format('"%s" --output "%s" 2>nul', settings.helper_path, output_file)
-    os.execute(cmd)
 
     local f = io.open(output_file, "r")
     if not f then
@@ -189,14 +187,14 @@ local function evaluate()
     if err then
         state = "SIGNAL_LOST"
         last_reason = err
-        obs.blog(obs.LOG_WARN, "[OBS Helper JW] " .. err)
+        obs.blog(obs.LOG_INFO, "[OBS Helper JW] " .. err)
         return
     end
 
     if result == nil then
         state = "SIGNAL_LOST"
         last_reason = "nessuna risposta dall'helper"
-        obs.blog(obs.LOG_WARN, "[OBS Helper JW] nessuna risposta dall'helper")
+        obs.blog(obs.LOG_INFO, "[OBS Helper JW] nessuna risposta dall'helper")
         return
     end
 
@@ -366,6 +364,14 @@ function script_load(settings_ud)
     saved_scene = ""
     cycle_armed = false
     last_reason = "caricato"
+
+    -- Avvia timer periodico per evaluate (ogni 500ms)
+    -- Lancia helper UNA SOLA VOLTA in background (start /b = nessuna finestra visibile)
+    if settings.helper_path ~= "" then
+        local launch_cmd = string.format('start "" /b "%s" --monitor', settings.helper_path)
+        os.execute(launch_cmd)
+        obs.blog(obs.LOG_INFO, "[OBS Helper JW] helper lanciato in background: " .. settings.helper_path)
+    end
 
     -- Avvia timer periodico per evaluate (ogni 500ms)
     obs.timer_add(evaluate, tick_interval_ms)

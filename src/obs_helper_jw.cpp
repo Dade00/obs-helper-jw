@@ -59,9 +59,16 @@ bool obs_module_load(obs_module_t *module)
     g_plugin->config_.include_images = false;
     g_plugin->config_.last_reason = "caricato";
 
-    // Rilevamento automatico helper accanto al plugin
+    // Rilevamento automatico helper accanto al plugin DLL
     std::wstring helper_path_w = find_helper_path();
-    g_plugin->config_.helper_path = std::string(helper_path_w.begin(), helper_path_w.end());
+    if (!helper_path_w.empty()) {
+        std::string helper_path_str;
+        helper_path_str.reserve(helper_path_w.size());
+        for (wchar_t c : helper_path_w) {
+            helper_path_str += static_cast<char>(c);
+        }
+        g_plugin->config_.helper_path = helper_path_str;
+    }
 
     // Inizializza componenti
     g_plugin->detector_ = std::make_unique<JwDetector>();
@@ -86,7 +93,9 @@ void obs_module_unload(void)
 }
 
 // ————————————————————————————————————————————————————————————————
-// Impostazioni predefinite
+// Impostazioni predefinite (chiamato da OBS all'avvio)
+//
+// ObsData: http://docs.obsproject.com/scripting#obs_data_t
 // ————————————————————————————————————————————————————————————————
 void obs_module_set_defaults(obs_data_t *settings)
 {
@@ -98,6 +107,7 @@ void obs_module_set_defaults(obs_data_t *settings)
 
 // ————————————————————————————————————————————————————————————————
 // Pannello impostazioni OBS (tab interna)
+// Chiamato da OBS quando l'utente apre le impostazioni del plugin.
 // ————————————————————————————————————————————————————————————————
 obs_properties_t *obs_module_properties(obs_module_t *module, obs_properties_t *props)
 {
@@ -115,7 +125,7 @@ obs_properties_t *obs_module_properties(obs_module_t *module, obs_properties_t *
 }
 
 // ————————————————————————————————————————————————————————————————
-// Tick chiamato periodicamente (da chiamare da uno script Lua wrapper)
+// Tick chiamato periodicamente (da script Lua wrapper o timer esterno)
 // ————————————————————————————————————————————————————————————————
 void obs_helper_jw_tick(void)
 {

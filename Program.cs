@@ -506,7 +506,8 @@ class Program
         });
 
         trayIcon = new NotifyIcon();
-        trayIcon.Icon = SystemIcons.Application;
+        try { trayIcon.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath); }
+        catch { trayIcon.Icon = SystemIcons.Application; }
         trayIcon.Text = "OBS Helper JW";
         trayIcon.ContextMenuStrip = trayMenu;
         trayIcon.Visible = true;
@@ -540,6 +541,7 @@ class Program
 
         settingsForm = new Form();
         settingsForm.Text = "OBS Helper JW - Impostazioni";
+        try { settingsForm.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath); } catch { }
         settingsForm.Size = new Size(500, 500);
         settingsForm.FormBorderStyle = FormBorderStyle.FixedDialog;
         settingsForm.MaximizeBox = false;

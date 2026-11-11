@@ -1,0 +1,11 @@
+# Build .NET
+bin/
+obj/
+.vs/
+
+# Config locale (può contenere la password di obs-websocket)
+config.json
+
+# Schermata di riposo personale + log
+baseline.png
+*.log

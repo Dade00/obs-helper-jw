@@ -10,6 +10,10 @@
     <PlatformTarget>x64</PlatformTarget>
     <UseWindowsForms>true</UseWindowsForms>
     <ApplicationIcon>assets\app.ico</ApplicationIcon>
+    <AssemblyName>HelperObs</AssemblyName>
+    <AssemblyTitle>OBS Helper JW</AssemblyTitle>
+    <Product>OBS Helper JW</Product>
+    <Description>Segue JW Library e commuta la scena OBS via obs-websocket</Description>
   </PropertyGroup>
 
 </Project>

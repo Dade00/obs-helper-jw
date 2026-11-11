@@ -71,6 +71,7 @@ class Program
         AppDomain.CurrentDomain.UnhandledException += (s, e) => LogToFile("Crash: " + e.ExceptionObject);
 
         RotateLogIfNeeded();
+        MigrateLegacyStartup();
 
         string exeDir = AppContext.BaseDirectory;
         string configPath = Path.Combine(exeDir, "config.json");
@@ -755,6 +756,23 @@ class Program
             key.SetValue(StartupValueName, "\"" + Application.ExecutablePath + "\"");
         else
             key.DeleteValue(StartupValueName, false);
+    }
+
+    // L'exe prima si chiamava WinRtMediaProbe.exe: se l'avvio automatico
+    // punta ancora al vecchio nome, lo aggiorna al percorso attuale.
+    static void MigrateLegacyStartup()
+    {
+        try
+        {
+            using var key = Registry.CurrentUser.OpenSubKey(RunKeyPath, true);
+            string? v = key?.GetValue(StartupValueName) as string;
+            if (v != null && v.Contains("WinRtMediaProbe.exe", StringComparison.OrdinalIgnoreCase))
+            {
+                key!.SetValue(StartupValueName, "\"" + Application.ExecutablePath + "\"");
+                LogToFile("Avvio automatico migrato al nuovo exe");
+            }
+        }
+        catch (Exception ex) { LogToFile("Migrazione avvio: " + ex.Message); }
     }
 
     static void UpdateTrayText()

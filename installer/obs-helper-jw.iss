@@ -3,8 +3,8 @@
 ; Non include config.json né baseline.png: restano quelli dell'utente.
 
 #define MyAppName "OBS Helper JW"
-#define MyAppVersion "0.2.0"
-#define MyAppExeName "WinRtMediaProbe.exe"
+#define MyAppVersion "0.2.1"
+#define MyAppExeName "HelperObs.exe"
 
 [Setup]
 AppId={{30EE99DF-579A-4882-9EB1-535B9604A564}}
@@ -29,6 +29,13 @@ Name: "startup"; Description: "Avvia con Windows"; Flags: unchecked
 
 [Files]
 Source: "..\bin\Release\net10.0-windows\win-x64\publish\*"; DestDir: "{app}"; Excludes: "config.json,baseline.png"; Flags: ignoreversion recursesubdirs createallsubdirs
+
+[InstallDelete]
+; Orfani del vecchio nome exe (<= 0.2.0): il runtime e identico e resta.
+Type: files; Name: "{app}\WinRtMediaProbe.exe"
+Type: files; Name: "{app}\WinRtMediaProbe.pdb"
+Type: files; Name: "{app}\WinRtMediaProbe.deps.json"
+Type: files; Name: "{app}\WinRtMediaProbe.runtimeconfig.json"
 
 [Icons]
 Name: "{autoprograms}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"

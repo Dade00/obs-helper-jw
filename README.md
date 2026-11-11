@@ -46,7 +46,7 @@ dotnet publish -c Release -r win-x64 --self-contained true /p:TargetPlatformVers
 
 Copia il contenuto di `bin/Release/net10.0-windows/win-x64/publish/` in una
 cartella (es. `%APPDATA%\obs-studio\obs-helper-jw\`), avvia
-`WinRtMediaProbe.exe`, tasto destro sull'icona nel tray → Impostazioni:
+`HelperObs.exe`, tasto destro sull'icona nel tray → Impostazioni:
 
 - scena multimediale (elenco letto da OBS), abilita automazione,
   "In pausa torna alla scena precedente", "Includi immagini" + cattura

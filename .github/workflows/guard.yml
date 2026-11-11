@@ -7,7 +7,7 @@ on:
     branches: [master]
 
 jobs:
-  guard:
+  guard-no-binaries:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

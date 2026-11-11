@@ -34,6 +34,12 @@ Windows SDK installato, vedi `Include/10.0.*` in `Windows Kits/10`.)
 
 ## Installazione (PC destinatario)
 
+**Via installer (consigliato):** scarica `OBS-Helper-JW-Setup-*.exe` dall'ultima
+Release GitHub ed eseguilo. Installa in `%LOCALAPPDATA%\obs-studio\obs-helper-jw`
+senza diritti admin, non tocca mai il tuo `config.json` esistente.
+
+**Manuale:**
+
 ```cmd
 dotnet publish -c Release -r win-x64 --self-contained true /p:TargetPlatformVersion=10.0.26100.0
 ```

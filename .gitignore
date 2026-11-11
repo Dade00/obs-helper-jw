@@ -2,6 +2,7 @@
 bin/
 obj/
 .vs/
+dist/
 
 # Config locale (può contenere la password di obs-websocket)
 config.json

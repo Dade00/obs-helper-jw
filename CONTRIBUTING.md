@@ -1,7 +1,8 @@
 # Contribuire — OBS Helper JW
 
-> Regola unica: **ogni modifica passa da una pull request revisionata dal
-> maintainer. I push diretti su `master` sono vietati** (branch protection).
+> Regola unica: **ogni modifica passa da una pull request. I push diretti
+> su `master` sono vietati** (branch protection: niente push, niente force,
+> niente merge con check rosso — vale anche per il maintainer).
 
 ## Flusso obbligatorio
 
@@ -10,8 +11,9 @@
 3. Compila prima di aprire la PR:
    `dotnet build -c Release /p:TargetPlatformVersion=10.0.26100.0`
    (0 errori; allega l'output se tocchi il protocollo websocket).
-4. Apri la PR verso `master` compilando il template. Solo il maintainer
-   fa merge (squash). Niente self-merge.
+4. Apri la PR verso `master` compilando il template. Il merge lo fa il
+   maintainer dopo averla revisionata (squash). Il check `guard-no-binaries`
+   deve essere verde.
 
 ## Cosa la PR deve rispettare (il CI blocca il resto)
 
@@ -23,7 +25,8 @@
 
 ## Protezione `master` (su GitHub, Settings → Branches)
 
-- Require a pull request before merging (1 approval, CODEOWNERS review)
+- Require a pull request before merging (0 approvazioni richieste:
+  il maintainer unisce da solo, i contributi esterni solo dopo sua revisione)
 - Require status checks (`guard-no-binaries`)
-- Require conversation resolution
-- Do not allow bypassing (nemmeno per il maintainer)
+- Niente force push, niente cancellazioni, nessuna eccezione per
+  l'amministratore

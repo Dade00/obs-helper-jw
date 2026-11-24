@@ -57,7 +57,7 @@ class Program
 
     static void Main(string[] args)
     {
-        singleInstance = new Mutex(true, @"Global\OBSHelperJW_SingleInstance", out bool createdNew);
+        singleInstance = new Mutex(true, @"Local\OBSHelperJW_SingleInstance", out bool createdNew);
         if (!createdNew)
         {
             MessageBox.Show("OBS Helper JW è già in esecuzione (cerca l'icona nel tray).",
@@ -72,9 +72,9 @@ class Program
 
         RotateLogIfNeeded();
         MigrateLegacyStartup();
+        MigrateUserData();
 
-        string exeDir = AppContext.BaseDirectory;
-        string configPath = Path.Combine(exeDir, "config.json");
+        string configPath = ConfigPath();
         if (File.Exists(configPath))
         {
             try
@@ -440,7 +440,49 @@ class Program
         return n == 0 ? 0 : sum / n;
     }
 
-    static string BaselinePath() => Path.Combine(AppContext.BaseDirectory, "baseline.png");
+    // ---------- Dati per-utente ----------
+    // L'exe può essere condiviso fra più account Windows (installazione
+    // machine-wide in Program Files): config e baseline vivono in AppData
+    // dell'utente corrente, così ogni account ha le sue impostazioni.
+    static string UserDataDir()
+    {
+        string d = Path.Combine(
+            Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+            "OBS Helper JW");
+        Directory.CreateDirectory(d);
+        return d;
+    }
+
+    static string ConfigPath() => Path.Combine(UserDataDir(), "config.json");
+
+    static string BaselinePath() => Path.Combine(UserDataDir(), "baseline.png");
+
+    // Prima esecuzione con la nuova versione: copia config/baseline dalla
+    // vecchia posizione (accanto all'exe) nella cartella per-utente, se lì
+    // non esistono ancora. Così non si perdono le impostazioni esistenti.
+    static void MigrateUserData()
+    {
+        try
+        {
+            string exeDir = AppContext.BaseDirectory;
+            string dstDir = UserDataDir();
+            string dstCfg = Path.Combine(dstDir, "config.json");
+            string srcCfg = Path.Combine(exeDir, "config.json");
+            if (!File.Exists(dstCfg) && File.Exists(srcCfg))
+            {
+                File.Copy(srcCfg, dstCfg);
+                LogToFile("Config migrata in percorso per-utente");
+            }
+            string dstBase = Path.Combine(dstDir, "baseline.png");
+            string srcBase = Path.Combine(exeDir, "baseline.png");
+            if (!File.Exists(dstBase) && File.Exists(srcBase))
+            {
+                File.Copy(srcBase, dstBase);
+                LogToFile("Baseline migrata in percorso per-utente");
+            }
+        }
+        catch (Exception ex) { LogToFile("Migrazione dati utente: " + ex.Message); }
+    }
 
     static void LoadBaseline()
     {
@@ -731,7 +773,7 @@ class Program
 
     static void SaveConfig()
     {
-        string configPath = Path.Combine(AppContext.BaseDirectory, "config.json");
+        string configPath = ConfigPath();
         File.WriteAllText(configPath, JsonSerializer.Serialize(config, new JsonSerializerOptions { WriteIndented = true }));
     }
 
@@ -758,18 +800,25 @@ class Program
             key.DeleteValue(StartupValueName, false);
     }
 
-    // L'exe prima si chiamava WinRtMediaProbe.exe: se l'avvio automatico
-    // punta ancora al vecchio nome, lo aggiorna al percorso attuale.
+    // L'exe prima si chiamava WinRtMediaProbe.exe e prima della 0.2.2
+    // si installava nella LocalAppData del singolo utente: se l'avvio
+    // automatico punta a un percorso diverso da quello in esecuzione
+    // (vecchio nome o vecchia cartella), lo aggiorna al percorso attuale.
+    // Gira nella sessione dell'utente corrente, quindi sistema solo la
+    // chiave HKCU di quell'utente: ogni account lo esegue una volta.
     static void MigrateLegacyStartup()
     {
         try
         {
             using var key = Registry.CurrentUser.OpenSubKey(RunKeyPath, true);
             string? v = key?.GetValue(StartupValueName) as string;
-            if (v != null && v.Contains("WinRtMediaProbe.exe", StringComparison.OrdinalIgnoreCase))
+            if (v == null) return;
+            string cur = Application.ExecutablePath;
+            string normV = v.Trim().Trim('"');
+            if (!normV.Equals(cur, StringComparison.OrdinalIgnoreCase))
             {
-                key!.SetValue(StartupValueName, "\"" + Application.ExecutablePath + "\"");
-                LogToFile("Avvio automatico migrato al nuovo exe");
+                key!.SetValue(StartupValueName, "\"" + cur + "\"");
+                LogToFile("Avvio automatico migrato al percorso attuale");
             }
         }
         catch (Exception ex) { LogToFile("Migrazione avvio: " + ex.Message); }

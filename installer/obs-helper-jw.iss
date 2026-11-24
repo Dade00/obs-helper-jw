@@ -3,16 +3,16 @@
 ; Non include config.json né baseline.png: restano quelli dell'utente.
 
 #define MyAppName "OBS Helper JW"
-#define MyAppVersion "0.2.1"
+#define MyAppVersion "0.2.2"
 #define MyAppExeName "HelperObs.exe"
 
 [Setup]
 AppId={{30EE99DF-579A-4882-9EB1-535B9604A564}}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
-DefaultDirName={localappdata}\obs-studio\obs-helper-jw
+DefaultDirName={autopf}\OBS Helper JW
 DisableDirPage=no
-PrivilegesRequired=lowest
+PrivilegesRequired=admin
 OutputDir=..\dist
 OutputBaseFilename=OBS-Helper-JW-Setup-{#MyAppVersion}
 Compression=lzma2/max
